@@ -39,7 +39,7 @@ class Point : UserType {
         return null
     }
 
-    override fun parseValue(ss: String): Any {
+    override fun parseValue(ss: String): UserType {
         val words = ss.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         val x = words[0].toDouble()
         val y = words[1].toDouble()

@@ -138,7 +138,7 @@ class MyLinkedList : Serializable {
         var leftLL : MyLinkedList = MyLinkedList()
         var rightLL : MyLinkedList = MyLinkedList()
         var current = linkedList.first
-        for(num in 0..<(linkedList.size)){
+        for(num in 0 until (linkedList.size)){
             if(num<middle){
                 leftLL.add(current!!.value!!)
             }else{
@@ -190,7 +190,15 @@ class MyLinkedList : Serializable {
             cur = cur.next
         }
     }
-
+    fun toList():MutableList<String>{
+        var elem = first
+        var lst : MutableList<String> = mutableListOf<String>()
+        while(elem!=null){
+            lst.add(elem.value?.getValue().toString())
+            elem = elem.next
+        }
+        return lst
+    }
     companion object {
        // @Throws(IOException::class)
         fun serializeToBinary(myLinkedList: MyLinkedList) {

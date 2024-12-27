@@ -11,7 +11,7 @@ class MyFloat(var value : Float) : UserType {
 
     override fun create(): Any {
         val rnd = Random()
-        value = rnd.nextFloat(100f)
+        value = rnd.nextFloat()
         return MyFloat(value)
     }
 
